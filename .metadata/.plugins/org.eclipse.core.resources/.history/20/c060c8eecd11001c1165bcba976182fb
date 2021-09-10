@@ -1,0 +1,2 @@
+spring.application.name=hr-worker
+server.port=${PORT:0}

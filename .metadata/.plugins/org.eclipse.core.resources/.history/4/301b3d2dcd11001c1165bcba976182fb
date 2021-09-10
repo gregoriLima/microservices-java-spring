@@ -1,0 +1,21 @@
+spring.application.name=hr-worker
+server.port = 8002
+
+#gerando uma porta aleatório
+#server.port=${PORT:0}
+#dizendo como será o nome da aplicação no eureka
+#eureka.instance.instance-id={spring.application.name}:{spring.application.instance_id:${random.value}}
+
+# essa configuração era usada com o RestTemplate, mas não é mais utilizada
+# hr-worker.host=http://localhost:8002
+
+#Eureka config
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka
+
+#Database config
+spring.jpa.defer-datasource-initialization=true
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
