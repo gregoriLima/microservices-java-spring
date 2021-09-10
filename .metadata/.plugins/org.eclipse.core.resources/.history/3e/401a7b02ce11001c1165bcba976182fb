@@ -1,8 +1,0 @@
-spring.application.name=hr-worker
-#server.port = 8002
-
-#gerando uma porta aleatório
-server.port=${PORT:0}
-#dizendo como será o nome da aplicação no eureka
-eureka.instance.instance-id={spring.application.name}:{spring.application.instance_id:${random.value}}
-
