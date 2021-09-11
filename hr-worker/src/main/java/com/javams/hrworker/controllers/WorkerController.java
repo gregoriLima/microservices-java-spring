@@ -2,11 +2,12 @@ package com.javams.hrworker.controllers;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,11 +19,20 @@ import com.javams.hrworker.repositories.WorkRepository;
 @RequestMapping(value = "/workers")
 public class WorkerController {
 
+	private static Logger log = org.slf4j.LoggerFactory.getLogger(WorkerController.class);
+	
+	// configuração vinda do server config que busca a configuração do git repository
+	@Value("${test.config}")
+	private String testConfig;
+	
 	@Autowired
 	private Environment env;
 	
 	@Autowired
 	private WorkRepository repository;
+	
+
+	
 	
 	@GetMapping
 	public ResponseEntity<List<Worker>> findAllWorkers(){
@@ -32,6 +42,18 @@ public class WorkerController {
 		return ResponseEntity.ok(listOfWorkers);
 		
 	}
+	
+	
+	
+	@GetMapping(value="/configs")
+	public ResponseEntity<Void> getConfigs(){
+
+		log.info("Config = " + testConfig);
+		
+		return ResponseEntity.noContent().build();
+		
+	}
+	
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Worker> findWorkerById(@PathVariable Long id){
