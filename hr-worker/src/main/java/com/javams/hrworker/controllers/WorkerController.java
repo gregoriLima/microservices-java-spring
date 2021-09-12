@@ -67,7 +67,7 @@ public class WorkerController {
 			e.printStackTrace();
 		}
 		
-		System.out.println("acessado servidor pela porta " + env.getProperty("local.server.port"));
+		// System.out.println("acessado servidor pela porta " + env.getProperty("local.server.port"));
 		
 		Worker worker = repository.findById(id).get();
 		
