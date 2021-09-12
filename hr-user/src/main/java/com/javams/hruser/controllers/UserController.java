@@ -33,7 +33,6 @@ public class UserController {
 		
 	}
 	
-	
 	@GetMapping(value = "/search")
 	public ResponseEntity<User> findWorkerByEmail(@RequestParam String email ){
 	
