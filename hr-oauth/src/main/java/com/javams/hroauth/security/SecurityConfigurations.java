@@ -60,7 +60,7 @@ public class SecurityConfigurations {
     	@Autowired
     	private UserDetailsService userService;
     	
-    	// para todos os outros endpoints é necessário enviar o token tipo Bearer
+    	// para todos os outros endpoints é necessário enviar o token tipo Bearer enviado para o cliente via /auth
         @Override
         protected void configure(HttpSecurity http) throws Exception {
         	

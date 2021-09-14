@@ -24,7 +24,7 @@ public class WorkerController {
 	private static Logger log = org.slf4j.LoggerFactory.getLogger(WorkerController.class);
 	
 	// configuração vinda do server config que busca a configuração do git repository
-	@Value("${test.config}")
+	//@Value("${test.config}")
 	private String testConfig;
 	
 	@Autowired

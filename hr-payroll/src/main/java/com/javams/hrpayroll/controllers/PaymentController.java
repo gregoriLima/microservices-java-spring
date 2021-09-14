@@ -27,6 +27,12 @@ public class PaymentController {
 	@Autowired
 	private PaymentService service;
 	
+	
+	@GetMapping
+	public String hello() {
+		return "hello payment";
+	}
+	
 	/* old dependency
 	 	<dependency>
 			<groupId>org.springframework.cloud</groupId>
